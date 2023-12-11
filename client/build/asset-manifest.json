@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c3be74c0.css",
+    "main.js": "/static/js/main.fba9e6cf.js",
+    "static/media/home.png": "/static/media/home.4d9b866073a54c848efd.png",
+    "static/media/Rathish.png": "/static/media/Rathish.6f29b398676db5e01797.png",
+    "static/media/bg.png": "/static/media/bg.ef0a9569ac0190ad93af.png",
+    "static/media/about.png": "/static/media/about.b4a5bff7080a6905451b.png",
+    "static/media/benefit2.png": "/static/media/benefit2.35029a7bece92dcbe336.png",
+    "static/media/benefit1.png": "/static/media/benefit1.9b4ac496b3e78f4c4174.png",
+    "static/media/benefit4.png": "/static/media/benefit4.87ca33b5e8eee58b3fee.png",
+    "static/media/benefit3.png": "/static/media/benefit3.59d05852be7f2efcff03.png",
+    "static/media/logop3.png": "/static/media/logop3.b61a49f3e716f87067ed.png",
+    "static/media/benefit4_bg.png": "/static/media/benefit4_bg.da2f2bdbea11c95080a8.png",
+    "static/media/benefit1_bg.png": "/static/media/benefit1_bg.4dee57dec6d01ac1b11a.png",
+    "static/media/benefit2_bg.png": "/static/media/benefit2_bg.c39835925d68a2ec1b42.png",
+    "index.html": "/index.html",
+    "main.c3be74c0.css.map": "/static/css/main.c3be74c0.css.map",
+    "main.fba9e6cf.js.map": "/static/js/main.fba9e6cf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3be74c0.css",
+    "static/js/main.fba9e6cf.js"
+  ]
+}

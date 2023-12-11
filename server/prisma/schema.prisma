@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Parent {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String    @unique
+  password  String
+  phnum     BigInt    @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  students  Student[]
+}
+
+model Student {
+  id       Int       @id @default(autoincrement())
+  name     String
+  parentId Int?
+  courses  Courses[]
+  parent   Parent?   @relation(fields: [parentId], references: [id])
+}
+
+model Instructor {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String    @unique
+  password  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  courses   Courses[]
+  demo      Demo[]
+}
+
+model Demo {
+  id             Int         @id @default(autoincrement())
+  email          String      @unique
+  name           String
+  contact        String
+  level          String
+  inspiration    String
+  experience     String
+  experienceYear String
+  interest       String
+  demoTime       String
+  contactTime    String
+  instructorId   Int?
+  status         Int
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+  instructor     Instructor? @relation(fields: [instructorId], references: [id])
+}
+
+model Courses {
+  id             Int         @id @default(autoincrement())
+  studentId      Int?
+  instructorId   Int?
+  level          Int
+  currentSession Int
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+  classes        Class[]
+  instructor     Instructor? @relation(fields: [instructorId], references: [id])
+  student        Student?    @relation(fields: [studentId], references: [id])
+}
+
+model Class {
+  id                 Int      @id @default(autoincrement())
+  courseId           Int?
+  classDate          DateTime
+  classDuration      Int
+  session            Int
+  instructorFeedback String   @default("")
+  parentFeedback     String   @default("")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  course             Courses? @relation(fields: [courseId], references: [id])
+}

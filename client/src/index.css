@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-secondary text-secondary bg-gradient-to-b from-[#F6FAFD] to-[#FFFFFF] bg-no-repeat;
+  }
+  ::-webkit-scrollbar {
+    width: 0rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span {
+    @apply font-primary text-primary subpixel-antialiased;
+  }
+  h7 {
+    @apply text-tertiary;
+  }
+  a {
+    @apply text-secondary font-semibold hover:text-accent-primary_hover transition;
+  }
+  .btn {
+    @apply text-lg h-[60px] px-[30px] rounded-full transition text-white;
+  }
+  .btn-primary {
+    @apply bg-accent-primary hover:bg-accent-primary_hover;
+  }
+  .btn-secondary {
+    @apply bg-accent-secondary hover:bg-accent-secondary_hover;
+  }
+  .btn-quaternary {
+    @apply bg-white text-base font-bold text-primary drop-shadow-primary hover:bg-accent-primary_hover hover:text-white;
+  }
+  .h1 {
+    @apply text-[40px] xl:text-[80px] font-bold leading-[1.1];
+  }
+  .h2 {
+    @apply text-[250%] font-bold leading-tight;
+  }
+  .h2card {
+    @apply text-[200%] font-bold leading-tight;
+  }
+  .h3 {
+    @apply text-[24px];
+  }
+  .h3card {
+    @apply text-[140%] font-bold leading-tight;
+  }
+  .lead {
+    @apply text-lg text-secondary font-secondary font-medium leading-relaxed;
+  }
+  .card {
+    @apply w-72 cursor-pointer border-b-4 rounded-md bg-gradient-to-t 
+    from-[#E5B8F4] h-44 text-center px-3 py-7 self-end;
+  }
+  .cardtitle {
+    @apply text-[40px] font-primary text-tertiary font-bold leading-tight;
+  }
+}
+.loading-indicator:before {
+    content: '';
+    background: #00000080;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .loading-indicator:after {
+    content: ' ';
+    position: fixed;
+    top: 40%;
+    left: 45%;
+    z-index: 10010;
+    color:white;
+    text-align:center;
+    font-weight:bold;
+    font-size:1.2rem;        
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #0474bf; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+.swal2-container {
+  z-index: 99999;
+}
+
+body > #root > div {
+  height: 100vh;
+  font-family: 'Inter'
+}
